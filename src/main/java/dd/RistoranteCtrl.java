@@ -38,5 +38,12 @@ public class RistoranteCtrl {
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
 	}
+	@PostMapping("/rest/mod")
+	public String restMod(@RequestParam int id,Model model) {
+		Ristorante rest=new Ristorante();
+		repo.save(rest);
+		model.addAttribute("restaurants", repo.findAll());
+		return "/paginaModifica";
+	}
 
 }
