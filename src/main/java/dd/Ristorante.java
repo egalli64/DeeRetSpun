@@ -11,22 +11,27 @@ import javax.persistence.Table;
 public class Ristorante{
 		
 		@Id
-		@Column(name = "ID")
+		@Column(name = "RESTOURANT_ID")
 		private int id;
-		@Column(name = "NAME")
+		@Column(name = "RESTOURANT_NAME")
 		private String name;
-		@Column(name = "ADDRESS")
+		@Column(name = "RESTOURANT_ADDRESS")
 		private String address;
 		
-		@Column(name = "PLACE")
+		@Column(name = "SEATS")
 		private int place;
-		@Column(name = "TYPE_OF_KITCHEN")
+		@Column(name = "TYPE_KITCHEN")
 		private String typeOfCucina;
 		@Column(name = "FEEDBACK")
-		private String feedback;
+		private int feedback;
 		@Column(name = "PRICE_RANGE")
 		private String priceRange;
-		public Ristorante(int id, String name, String address, int place, String typeOfCucina, String feedback,
+		
+		public Ristorante() {
+			
+		}
+		
+		public Ristorante(int id, String name, String address, int place, String typeOfCucina, int feedback,
 				String priceRange) {
 			super();
 			this.id = id;
@@ -37,54 +42,32 @@ public class Ristorante{
 			this.feedback = feedback;
 			this.priceRange = priceRange;
 		}
-		public int getID() {
+		public int getId() {
 			return id;
-		}
-		public void setID(int id) {
-			this.id = id;
 		}
 		public String getName() {
 			return name;
 		}
-		public void setName(String name) {
-			this.name = name;
-		}
 		public String getAddress() {
 			return address;
-		}
-		public void setAddress(String address) {
-			this.address = address;
 		}
 		public long getPlace() {
 			return place;
 		}
-		public void setPlace(int place) {
-			this.place = place;
-		}
 		public String getTypeOfCucina() {
 			return typeOfCucina;
 		}
-		public void setTypeOfCucina(String typeOfCucina) {
-			this.typeOfCucina = typeOfCucina;
-		}
-		public String getFeedback() {
+		public int getFeedback() {
 			return feedback;
-		}
-		public void setFeedback(String feedback) {
-			this.feedback = feedback;
 		}
 		public String getPriceRange() {
 			return priceRange;
 		}
-		public void setPriceRange(String priceRange) {
-			this.priceRange = priceRange;
-		}
 		@Override
 		public String toString() {
-			return "Ristorante [ID=" + id + ", name=" + name + ", address=" + address + ", place=" + place
+			return "Ristorante [id=" + id + ", name=" + name + ", address=" + address + ", place=" + place
 					+ ", typeOfCucina=" + typeOfCucina + ", feedback=" + feedback + ", priceRange=" + priceRange + "]";
 		}
-		
 		
 		
 		
