@@ -29,7 +29,7 @@ public class Ristorante{
 		public Ristorante(long iD, String name, String address, long place, String typeOfCucina, String feedback,
 				String priceRange) {
 			super();
-			ID = iD;
+			this.ID = iD;
 			this.name = name;
 			this.address = address;
 			this.place = place;

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller public class RistoranteCtrl {
 	@Autowired RistoranteRepo repo;
-	@GetMapping("/ristorante")
+	@GetMapping("/restaurants")
 	public String ristorante(Model model) {
-	model.addAttribute("Ristorante", repo.findAll());
-	return "/ristorante";
+	model.addAttribute("red_restaurants", repo.findAll());
+	return "/restaurants";
 	}
 	
 
