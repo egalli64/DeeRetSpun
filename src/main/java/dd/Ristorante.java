@@ -7,29 +7,29 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "RISTORANTE")
+@Table(name = "RED_RESTAURANTS")
 public class Ristorante{
 		
 		@Id
 		@Column(name = "ID")
-		private long ID;
+		private int id;
 		@Column(name = "NAME")
 		private String name;
 		@Column(name = "ADDRESS")
 		private String address;
 		
 		@Column(name = "PLACE")
-		private long place;
+		private int place;
 		@Column(name = "TYPE_OF_KITCHEN")
 		private String typeOfCucina;
 		@Column(name = "FEEDBACK")
 		private String feedback;
 		@Column(name = "PRICE_RANGE")
 		private String priceRange;
-		public Ristorante(long iD, String name, String address, long place, String typeOfCucina, String feedback,
+		public Ristorante(int id, String name, String address, int place, String typeOfCucina, String feedback,
 				String priceRange) {
 			super();
-			this.ID = iD;
+			this.id = id;
 			this.name = name;
 			this.address = address;
 			this.place = place;
@@ -37,11 +37,11 @@ public class Ristorante{
 			this.feedback = feedback;
 			this.priceRange = priceRange;
 		}
-		public long getID() {
-			return ID;
+		public int getID() {
+			return id;
 		}
-		public void setID(long iD) {
-			ID = iD;
+		public void setID(int id) {
+			this.id = id;
 		}
 		public String getName() {
 			return name;
@@ -58,7 +58,7 @@ public class Ristorante{
 		public long getPlace() {
 			return place;
 		}
-		public void setPlace(long place) {
+		public void setPlace(int place) {
 			this.place = place;
 		}
 		public String getTypeOfCucina() {
@@ -81,7 +81,7 @@ public class Ristorante{
 		}
 		@Override
 		public String toString() {
-			return "Ristorante [ID=" + ID + ", name=" + name + ", address=" + address + ", place=" + place
+			return "Ristorante [ID=" + id + ", name=" + name + ", address=" + address + ", place=" + place
 					+ ", typeOfCucina=" + typeOfCucina + ", feedback=" + feedback + ", priceRange=" + priceRange + "]";
 		}
 		
