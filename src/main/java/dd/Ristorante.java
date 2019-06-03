@@ -11,11 +11,11 @@ import javax.persistence.Table;
 public class Ristorante{
 		
 		@Id
-		@Column(name = "RESTOURANT_ID")
+		@Column(name = "RESTAURANT_ID")
 		private int id;
-		@Column(name = "RESTOURANT_NAME")
+		@Column(name = "RESTAURANT_NAME")
 		private String name;
-		@Column(name = "RESTOURANT_ADDRESS")
+		@Column(name = "RESTAURANT_ADDRESS")
 		private String address;
 		
 		@Column(name = "SEATS")

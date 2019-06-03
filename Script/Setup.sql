@@ -18,3 +18,7 @@ VALUES (003, 'Green Irish', 'Via Dublino 86', 18, 'Irish', 4, '$$');
 INSERT INTO RED_RESTAURANTS
 VALUES (004, 'Japanese sushi', 'Via Tokyo 36', 40, 'Japanese', 3, '$$$');
 
+CREATE SEQUENCE RESTAURANTS_SEQ;
+
+
+
