@@ -1,0 +1,9 @@
+package dd;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RistoranteRepo extends CrudRepository<Ristorante,Long> {
+
+}
