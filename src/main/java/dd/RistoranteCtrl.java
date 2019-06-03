@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class RistoranteCtrl { 
+public class RistoranteCtrl {
 	@Autowired
 	RistoranteRepo repo;
 
-	@PostMapping("/restaurants")
+	@GetMapping("/restaurants")
 	public String ristorante(Model model) {
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
