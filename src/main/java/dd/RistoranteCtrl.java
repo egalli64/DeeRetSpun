@@ -48,7 +48,7 @@ public class RistoranteCtrl {
 		if (opt.isPresent()) {
 			model.addAttribute("restaurant", opt.get());
 		}
-		return "/paginaModifica";
+		return "/modifyRestaurant";
 
 	}
 	@GetMapping("/rest/canc")
