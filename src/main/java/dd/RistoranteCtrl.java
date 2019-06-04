@@ -24,7 +24,7 @@ public class RistoranteCtrl {
 	// ritorna il nome del file in templates
 	@PostMapping("/insRes/Save")
 	public String inserisci(@RequestParam int id, @RequestParam String name, @RequestParam String address,
-			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam int feedback,
+			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam String feedback,
 			@RequestParam String priceRange, Model model) {
 		Ristorante insRes = new Ristorante(id, name, address, place, typeOfCucina, feedback, priceRange);
 		repo.save(insRes);
@@ -34,7 +34,7 @@ public class RistoranteCtrl {
 
 	@PostMapping("/modRes")
 	public String modifica(@RequestParam int id, @RequestParam String name, @RequestParam String address,
-			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam int feedback,
+			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam String feedback,
 			@RequestParam String priceRange, Model model) {
 		Ristorante insRes = new Ristorante(id, name, address, place, typeOfCucina, feedback, priceRange);
 		repo.save(insRes);

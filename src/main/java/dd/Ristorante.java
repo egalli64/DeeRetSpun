@@ -23,7 +23,7 @@ public class Ristorante{
 		@Column(name = "TYPE_KITCHEN")
 		private String typeOfCucina;
 		@Column(name = "FEEDBACK")
-		private int feedback;
+		private String feedback;
 		@Column(name = "PRICE_RANGE")
 		private String priceRange;
 		
@@ -31,7 +31,7 @@ public class Ristorante{
 			
 		}
 		
-		public Ristorante(int id, String name, String address, int place, String typeOfCucina, int feedback,
+		public Ristorante(int id, String name, String address, int place, String typeOfCucina, String feedback,
 				String priceRange) {
 			super();
 			this.id = id;
@@ -57,7 +57,7 @@ public class Ristorante{
 		public String getTypeOfCucina() {
 			return typeOfCucina;
 		}
-		public int getFeedback() {
+		public String getFeedback() {
 			return feedback;
 		}
 		public String getPriceRange() {
