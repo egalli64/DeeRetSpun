@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UtentiRepo extends CrudRepository<Utenti,Integer> {
+public interface UsersRepo extends CrudRepository<Users,Integer> {
 
 }
