@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>regions</title>
+</head>
+<body>
+	<p>Users in table</p>
+
+	<form method="post" action="/mod">
+		<div>
+			<label for="id">USER_ID:</label> <input type="text" id="userId"
+				name="userId" th:value="${users.userId}" readonly>
+		</div>
+		<div>
+			<label for="name">FIRST_NAME:</label> <input type="text" id="firstName"
+				name="firstName" th:value="${users.firstName}">
+		</div>
+		<div>
+			<label for="address">LAST_NAME:</label> <input type="text" id="lastName"
+				name="lastName" th:value="${users.lastName}" />
+		</div>
+		<div>
+			<label for="place">RELIABILITY:</label> <input type="text" id="reliability"
+				name="reliability" th:value="${users.reliability}">
+		</div>
+		<div>
+			<label for="typeOfCucina">NUM_REVIEWS:</label> <input type="text"
+				id="reviews" name="reviews"
+				th:value="${users.reviews}">
+		</div>
+		<div>
+			<button type="submit">Conferma</button>
+		</div>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

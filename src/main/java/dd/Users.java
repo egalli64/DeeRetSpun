@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "RED_USERS")
-public class Users {
+public class Users{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,
