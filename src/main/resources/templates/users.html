@@ -6,26 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
 
-<title>Restaurants</title>
+<title>Users</title>
 </head>
 <body>
-	<p>Restaurants in table
+	<p>Users in table
 	<a href="/inserimentoUtente.html">
-	<button type="submit">Nuovo Ristorante</button>
+	<button type="submit">Nuovo Utente</button>
 	</a>
 	</p>
 	<table>
 		<tr>
 			<th>AZIONI</th>
-			<th>ID</th>
-			<th>NAME</th>
-			<th>ADDRESS</th>
-			<th>PLACE</th>
-			<th>TYPE OF CUCINA</th>
-			<th>FEEDBACK</th>
-			<th>PRICE RANGE</th>
+			<th>USER_ID</th>
+			<th>FIRST_NAME</th>
+			<th>LAST_NAME</th>
+			<th>RELIABILITY</th>
+			<th>REVIEWS</th>
 		</tr>
-		<tr th:each="cur: ${restaurants}">
+		<tr th:each="cur: ${users}"><!-- RICORDA DI CONTROLLARE IL NOME DI MODEL -->
 		<!-- al posto di regions ci va il nome del return del controller java -->
 			<td>
 				<a th:href = "@{/rest/mod(id=${cur.id})}">
@@ -35,14 +33,11 @@ shrink-to-fit=no">
 				<button type="submit">Cancella</button>
 				</a>
 			</td>
-			<td th:text="${cur.id}">1</td>
-			<td th:text="${cur.name}">2</td>
-			<td th:text="${cur.address}">3</td>
-			<td th:text="${cur.place}">4</td>
-			<td th:text="${cur.typeOfCucina}">5</td>
-			<td th:text="${cur.feedback}">6</td>
-			<td th:text="${cur.priceRange}">7</td>
-		</tr>
+			<td th:text="${cur.userId}">1</td>
+			<td th:text="${cur.firstName}">2</td>
+			<td th:text="${cur.lastName}">3</td>
+			<td th:text="${cur.reliability}">4</td>
+			<td th:text="${cur.reviews}">5</td>
 	</table>
 </body>
 </html>

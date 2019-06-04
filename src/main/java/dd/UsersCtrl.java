@@ -17,7 +17,7 @@ public class UsersCtrl {
 	
 	@GetMapping("/users") //il file che deve gestire gli utenti in templates dovrà prendere utente come nome
 	public String utenti(Model model) {
-		model.addAttribute("utente", repo.findAll());
+		model.addAttribute("users", repo.findAll());
 		return "/users";
 	}
 	 
