@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>regions</title>
+</head>
+<body>
+	<p>Restaurants in table</p>
+
+	<form method="post" action="/insRes/Save">
+		<div>
+			<label for="name">NAME:</label>
+			<input type="text" id="name" name="name">
+		</div>
+		<div>
+			<label for="address">ADDRESS:</label> 
+			<input type="text" id="address" name="address">
+		</div>
+        <div>
+			<label for="place">PLACE:</label> 
+			<input type="text" id="place" name="place">
+		</div>
+		<div>
+			<label for="typeOfCucina">TYPE_OF_CUCINA:</label> 
+			<input type="text" id="typeOfCucina" name="typeOfCucina">
+		</div>
+		<div>
+			<label for="feedback">FEEDBACK:</label> 
+			<input type="text" id="feedback" name="feedback">
+		</div>
+		<div>
+			<label for="priceRange">PRICE_RANGE:</label> 
+			<input type="text" id="priceRange" name="priceRange">
+		</div>
+		<div>
+		<button type="submit">Conferma</button>
+		</div>
+	</form>	
+</body>
+</html>
