@@ -49,6 +49,16 @@ public class Ristorante{
 			this.feedback = feedback;
 			this.priceRange = priceRange;
 		}
+		public Ristorante(int id,String name, String address, int place, String typeOfCucina, String feedback,
+				String priceRange) {
+			this.id=id;
+			this.name = name;
+			this.address = address;
+			this.place = place;
+			this.typeOfCucina = typeOfCucina;
+			this.feedback = feedback;
+			this.priceRange = priceRange;
+		}
 		public int getId() {
 			return id;
 		}

@@ -33,10 +33,10 @@ public class RistoranteCtrl {
 	}
 
 	@PostMapping("/modRes")
-	public String modifica(@RequestParam String name, @RequestParam String address,
+	public String modifica(@RequestParam int id,@RequestParam String name, @RequestParam String address,
 			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam String feedback,
 			@RequestParam String priceRange, Model model) {
-		Ristorante insRes = new Ristorante(name, address, place, typeOfCucina, feedback, priceRange);
+		Ristorante insRes = new Ristorante(id,name, address, place, typeOfCucina, feedback, priceRange);
 		repo.save(insRes);
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
