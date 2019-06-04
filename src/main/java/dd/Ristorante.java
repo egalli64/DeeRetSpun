@@ -2,7 +2,10 @@ package dd;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -11,6 +14,12 @@ import javax.persistence.Table;
 public class Ristorante{
 		
 		@Id
+		
+		@GeneratedValue(strategy=GenerationType.SEQUENCE,
+		generator="RestGen")
+		@SequenceGenerator(sequenceName="RESTAURANTS_SEQ",
+		allocationSize=1, name="RestGen")
+		
 		@Column(name = "RESTAURANT_ID")
 		private int id;
 		@Column(name = "RESTAURANT_NAME")
@@ -31,10 +40,8 @@ public class Ristorante{
 			
 		}
 		
-		public Ristorante(int id, String name, String address, int place, String typeOfCucina, String feedback,
+		public Ristorante(String name, String address, int place, String typeOfCucina, String feedback,
 				String priceRange) {
-			super();
-			this.id = id;
 			this.name = name;
 			this.address = address;
 			this.place = place;

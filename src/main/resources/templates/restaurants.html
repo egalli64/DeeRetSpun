@@ -9,12 +9,14 @@ shrink-to-fit=no">
 <title>Restaurants</title>
 </head>
 <body>
-	<p>
-		Restaurants as string: <span th:text=" ${restaurants}">[]</span>
+	<p>Restaurants in table
+	<a href="/inserimento.html">
+	<button type="submit">Nuovo Ristorante</button>
+	</a>
 	</p>
-	<p>Restaurants in table</p>
 	<table>
 		<tr>
+			<th>AZIONI</th>
 			<th>ID</th>
 			<th>NAME</th>
 			<th>ADDRESS</th>
@@ -28,6 +30,9 @@ shrink-to-fit=no">
 			<td>
 				<a th:href = "@{/rest/mod(id=${cur.id})}">
 					<button type="submit">Modifica</button>
+				</a>
+				<a th:href = "@{/rest/canc(id=${cur.id})}">
+				<button type="submit">Cancella</button>
 				</a>
 			</td>
 			<td th:text="${cur.id}">1</td>
