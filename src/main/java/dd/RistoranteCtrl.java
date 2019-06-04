@@ -1,5 +1,7 @@
 package dd;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,33 +19,44 @@ public class RistoranteCtrl {
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
 	}
-	
-	//metodo seguente ci serve a fare l'inserimento e anche sempre salvare,mi ritorna il nome del file in templates
+
+	// metodo seguente ci serve a fare l'inserimento e anche sempre salvare,mi
+	// ritorna il nome del file in templates
 	@PostMapping("/insRes/Save")
-	public String inserisci(@RequestParam int id,@RequestParam String name,@RequestParam String address,
-			@RequestParam int place,@RequestParam String typeOfCucina,  
-			@RequestParam int feedback,@RequestParam String priceRange,Model model) {
-		Ristorante insRes=new Ristorante(id,name,address,place,typeOfCucina,feedback,priceRange);
+	public String inserisci(@RequestParam int id, @RequestParam String name, @RequestParam String address,
+			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam int feedback,
+			@RequestParam String priceRange, Model model) {
+		Ristorante insRes = new Ristorante(id, name, address, place, typeOfCucina, feedback, priceRange);
 		repo.save(insRes);
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
 	}
-	
+
 	@PostMapping("/modRes")
-	public String modifica(@RequestParam int id,@RequestParam String name,@RequestParam String address,
-			@RequestParam int place,@RequestParam String typeOfCucina,  
-			@RequestParam int feedback,@RequestParam String priceRange,Model model) {
-		Ristorante insRes=new Ristorante(id,name,address,place,typeOfCucina,feedback,priceRange);
+	public String modifica(@RequestParam int id, @RequestParam String name, @RequestParam String address,
+			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam int feedback,
+			@RequestParam String priceRange, Model model) {
+		Ristorante insRes = new Ristorante(id, name, address, place, typeOfCucina, feedback, priceRange);
 		repo.save(insRes);
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
 	}
-	@PostMapping("/rest/mod")
-	public String restMod(@RequestParam int id,Model model) {
-		Ristorante rest=new Ristorante();
-		repo.save(rest);
-		model.addAttribute("restaurants", repo.findAll());
+
+	@GetMapping("/rest/mod")
+	public String restMod(@RequestParam int id, Model model) {
+		Optional<Ristorante> opt = repo.findById(id);
+		if (opt.isPresent()) {
+			model.addAttribute("restaurant", opt.get());
+		}
 		return "/paginaModifica";
+
 	}
+
+	/*
+	 * @GetMapping("/rest/mod") public String restMod1(@RequestParam int id,Model
+	 * model) { Ristorante rest=new Ristorante(); repo.save(rest);
+	 * model.addAttribute("restaurants", repo.findAll()); return "/paginaModifica";
+	 * }
+	 */
 
 }
