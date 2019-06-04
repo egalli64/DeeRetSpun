@@ -1,1 +1,5 @@
-body { background-color: tomato; }
+html,
+body
+{
+height: 100%;
+}
