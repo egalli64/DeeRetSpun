@@ -26,10 +26,10 @@ shrink-to-fit=no">
 		<tr th:each="cur: ${users}"><!-- RICORDA DI CONTROLLARE IL NOME DI MODEL -->
 		<!-- al posto di regions ci va il nome del return del controller java -->
 			<td>
-				<a th:href = "@{/users/mod(userId=${cur.userId})}">
+				<a th:href = "@{/user/mod(userId=${cur.userId})}">
 					<button type="submit">Modifica</button>
 				</a>
-				<a th:href = "@{/users/canc(userId=${cur.userId})}">
+				<a th:href = "@{/user/canc(userId=${cur.userId})}">
 				<button type="submit">Cancella</button>
 				</a>
 			</td>

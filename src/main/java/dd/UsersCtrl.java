@@ -16,7 +16,7 @@ public class UsersCtrl {
 	UserRepo repo;
 	
 	@GetMapping("/users") //il file che deve gestire gli utenti in templates dovrà prendere utente come nome
-	public String utenti(Model model) {
+	public String utente(Model model) {
 		model.addAttribute("users", repo.findAll());
 		return "/users";
 	}
@@ -31,15 +31,15 @@ public class UsersCtrl {
 		return "/users";
 	}
 	
-	@PostMapping("/mod")
-	public String modify(@RequestParam int userId,@RequestParam String firstName, @RequestParam String lastName,
+	@PostMapping("/modUser")
+	public String modifica(@RequestParam int userId,@RequestParam String firstName, @RequestParam String lastName,
 			@RequestParam String reliability, @RequestParam int reviews, Model model) {
 		Users insUten = new Users(userId,firstName, lastName, reliability, reviews);
 		repo.save(insUten);
 		model.addAttribute("users", repo.findAll());
 		return "/users";
 	}
-	@GetMapping("/users/mod")
+	@GetMapping("/user/mod")
 	public String usersMod(@RequestParam int userId, Model model) {
 		Optional<Users> opt = repo.findById(userId);
 		if (opt.isPresent()) {
@@ -48,7 +48,7 @@ public class UsersCtrl {
 		return "/modifyUser";
 
 	}
-	@GetMapping("/users/canc")
+	@GetMapping("/user/canc")
 	public String userCanc(@RequestParam int userId, Model model) {
 		Optional<Users> opt=repo.findById(userId);
 		if(opt.isPresent()) {
