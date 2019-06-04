@@ -14,16 +14,16 @@ RESTAURANT_FEEDBACK VARCHAR2(5),
 PRICE_RANGE VARCHAR2(4));
 
 INSERT INTO RED_RESTAURANTS
-VALUES (001, 'Chinese home', 'Via Toscana 5', 30, 'Chinese', '*', '$$');
+VALUES (RESTAURANTS_SEQ.nextval, 'Chinese home', 'Via Toscana 5', 30, 'Chinese', '*', '$$');
 
 INSERT INTO RED_RESTAURANTS
-VALUES (002, 'Sicily ndo cori', 'Via Sicilia 18', 50, 'Italian', '*****', '$$$');
+VALUES (RESTAURANTS_SEQ.nextval, 'Sicily ndo cori', 'Via Sicilia 18', 50, 'Italian', '*****', '$$$');
 
 INSERT INTO RED_RESTAURANTS
-VALUES (003, 'Green Irish', 'Via Dublino 86', 18, 'Irish', '***', '$$');
+VALUES (RESTAURANTS_SEQ.nextval, 'Green Irish', 'Via Dublino 86', 18, 'Irish', '***', '$$');
 
 INSERT INTO RED_RESTAURANTS
-VALUES (004, 'Japanese sushi', 'Via Tokyo 36', 40, 'Japanese', '****', '$$$');
+VALUES (RESTAURANTS_SEQ.nextval, 'Japanese sushi', 'Via Tokyo 36', 40, 'Japanese', '****', '$$$');
 
 DROP TABLE RED_USERS;
 

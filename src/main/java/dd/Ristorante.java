@@ -31,7 +31,7 @@ public class Ristorante{
 		private int place;
 		@Column(name = "TYPE_KITCHEN")
 		private String typeOfCucina;
-		@Column(name = "FEEDBACK")
+		@Column(name = "RESTAURANT_FEEDBACK")
 		private String feedback;
 		@Column(name = "PRICE_RANGE")
 		private String priceRange;
