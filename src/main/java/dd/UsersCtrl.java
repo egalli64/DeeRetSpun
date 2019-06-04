@@ -37,11 +37,11 @@ public class UsersCtrl {
 		Users insUten = new Users(userId,firstName, lastName, reliability, reviews);
 		repo.save(insUten);
 		model.addAttribute("users", repo.findAll());
-		return "/Users";
+		return "/users";
 	}
 	@GetMapping("/users/mod")
-	public String usersMod(@RequestParam int id, Model model) {
-		Optional<Users> opt = repo.findById(id);
+	public String usersMod(@RequestParam int userId, Model model) {
+		Optional<Users> opt = repo.findById(userId);
 		if (opt.isPresent()) {
 			model.addAttribute("users", opt.get());
 		}
