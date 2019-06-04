@@ -1,3 +1,5 @@
+DROP TABLE REVIEWS;
+
 DROP TABLE RED_RESTAURANTS;
 
 DROP SEQUENCE RESTAURANTS_SEQ;
@@ -14,16 +16,16 @@ RESTAURANT_FEEDBACK VARCHAR2(5),
 PRICE_RANGE VARCHAR2(4));
 
 INSERT INTO RED_RESTAURANTS
-VALUES (RESTAURANTS_SEQ.nextval, 'Chinese home', 'Via Toscana 5', 30, 'Chinese', '*', '$$');
+VALUES (RESTAURANTS_SEQ.NEXTVAL, 'Chinese home', 'Via Toscana 5', 30, 'Chinese', '*', '$$');
 
 INSERT INTO RED_RESTAURANTS
-VALUES (RESTAURANTS_SEQ.nextval, 'Sicily ndo cori', 'Via Sicilia 18', 50, 'Italian', '*****', '$$$');
+VALUES (RESTAURANTS_SEQ.NEXTVAL, 'Sicily ndo cori', 'Via Sicilia 18', 50, 'Italian', '*****', '$$$');
 
 INSERT INTO RED_RESTAURANTS
-VALUES (RESTAURANTS_SEQ.nextval, 'Green Irish', 'Via Dublino 86', 18, 'Irish', '***', '$$');
+VALUES (RESTAURANTS_SEQ.NEXTVAL, 'Green Irish', 'Via Dublino 86', 18, 'Irish', '***', '$$');
 
 INSERT INTO RED_RESTAURANTS
-VALUES (RESTAURANTS_SEQ.nextval, 'Japanese sushi', 'Via Tokyo 36', 40, 'Japanese', '****', '$$$');
+VALUES (RESTAURANTS_SEQ.NEXTVAL, 'Japanese sushi', 'Via Tokyo 36', 40, 'Japanese', '****', '$$$');
 
 DROP TABLE RED_USERS;
 
@@ -39,18 +41,16 @@ RELIABILITY VARCHAR2(5),
 NUM_REVIEWS INTEGER);
 
 INSERT INTO RED_USERS 
-VALUES (001, 'Giuseppe', 'Adamo', '**', 1);
+VALUES (USERS_SEQ.NEXTVAL, 'Giuseppe', 'Adamo', '**', 1);
 
 INSERT INTO RED_USERS 
-VALUES (002, 'Lorenzo', 'Barsocchi', '***', 3);
+VALUES (USERS_SEQ.NEXTVAL, 'Lorenzo', 'Barsocchi', '***', 3);
 
 INSERT INTO RED_USERS 
-VALUES (003, 'Stefano', 'Farati', '***', 5);
+VALUES (USERS_SEQ.NEXTVAL, 'Stefano', 'Farati', '***', 5);
 
 INSERT INTO RED_USERS 
-VALUES (004, 'Charles', 'Dorian', '****', 7);
-
-DROP TABLE REVIEWS;
+VALUES (USERS_SEQ.NEXTVAL, 'Charles', 'Dorian', '****', 7);
 
 CREATE TABLE REVIEWS
 (REVIEW_ID INTEGER PRIMARY KEY,
