@@ -49,10 +49,10 @@ public class UsersCtrl {
 
 	}
 	@GetMapping("/users/canc")
-	public String userCanc(@RequestParam int id, Model model) {
-		Optional<Users> opt=repo.findById(id);
+	public String userCanc(@RequestParam int userId, Model model) {
+		Optional<Users> opt=repo.findById(userId);
 		if(opt.isPresent()) {
-			repo.deleteById(id);
+			repo.deleteById(userId);
 			model.addAttribute("users", repo.findAll());
 		}
 		return "/users";
