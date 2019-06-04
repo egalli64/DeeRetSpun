@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>User</title>
+</head>
+<body>
+	<p>Users in table</p>
+
+	<form method="post" action="/insUsers/Save">
+		<div>
+			<label for="firstName">FIRST_NAME:</label> <input type="text"
+				id="firstName" name="firstName">
+		</div>
+		<div>
+			<label for="lastName">LAST_NAME:</label> <input type="text"
+				id="lastName" name="lastName">
+		</div>
+		<div>
+			<label for="reliability">RELIABILITY:</label> <input type="text"
+				id="reliability" name="reliability">
+		</div>
+		<div>
+			<label for="reviews">NUMBER OF REVIEWS:</label> <input type="text" id="reviews"
+				name="reviews">
+		</div>
+		<div>
+			<button type="submit">Conferma</button>
+		</div>
+	</form>
+</body>
+</html>
