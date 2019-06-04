@@ -19,7 +19,7 @@ public class Users {
 	
 	@Column(name ="RELIABILITY")
 	private String reliability;
-	@Column(name = "REVIEWS")
+	@Column(name = "NUM_REVIEWS")
 	private int reviews;
 	public Users() {
 		
