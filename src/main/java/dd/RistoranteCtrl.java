@@ -51,12 +51,4 @@ public class RistoranteCtrl {
 		return "/paginaModifica";
 
 	}
-
-	/*
-	 * @GetMapping("/rest/mod") public String restMod1(@RequestParam int id,Model
-	 * model) { Ristorante rest=new Ristorante(); repo.save(rest);
-	 * model.addAttribute("restaurants", repo.findAll()); return "/paginaModifica";
-	 * }
-	 */
-
 }
