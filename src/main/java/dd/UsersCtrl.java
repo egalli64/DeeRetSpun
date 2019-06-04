@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class UsersCtrl {
 	
 	@Autowired
-	UsersRepo repo;
+	UserRepo repo;
 	
 	@GetMapping("/users") //il file che deve gestire gli utenti in templates dovrà prendere utente come nome
 	public String utenti(Model model) {

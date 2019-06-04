@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "RED_RESTAURANTS")
-public class Ristorante{
+public class Restaurant{
 		
 		@Id
 		
@@ -36,11 +36,11 @@ public class Ristorante{
 		@Column(name = "PRICE_RANGE")
 		private String priceRange;
 		
-		public Ristorante() {
+		public Restaurant() {
 			
 		}
 		
-		public Ristorante(String name, String address, int place, String typeOfCucina, String feedback,
+		public Restaurant(String name, String address, int place, String typeOfCucina, String feedback,
 				String priceRange) {
 			this.name = name;
 			this.address = address;
@@ -49,7 +49,7 @@ public class Ristorante{
 			this.feedback = feedback;
 			this.priceRange = priceRange;
 		}
-		public Ristorante(int id,String name, String address, int place, String typeOfCucina, String feedback,
+		public Restaurant(int id,String name, String address, int place, String typeOfCucina, String feedback,
 				String priceRange) {
 			this.id=id;
 			this.name = name;

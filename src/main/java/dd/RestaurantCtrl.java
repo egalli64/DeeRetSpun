@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class RistoranteCtrl {
+public class RestaurantCtrl {
 	@Autowired
-	RistoranteRepo repo;
+	RestaurantRepo repo;
 
 	@GetMapping("/restaurants")
 	public String ristorante(Model model) {
@@ -26,7 +26,7 @@ public class RistoranteCtrl {
 	public String inserisci(@RequestParam String name, @RequestParam String address,
 			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam String feedback,
 			@RequestParam String priceRange, Model model) {
-		Ristorante insRes = new Ristorante(name, address, place, typeOfCucina, feedback, priceRange);
+		Restaurant insRes = new Restaurant(name, address, place, typeOfCucina, feedback, priceRange);
 		repo.save(insRes);
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
@@ -36,7 +36,7 @@ public class RistoranteCtrl {
 	public String modifica(@RequestParam int id,@RequestParam String name, @RequestParam String address,
 			@RequestParam int place, @RequestParam String typeOfCucina, @RequestParam String feedback,
 			@RequestParam String priceRange, Model model) {
-		Ristorante insRes = new Ristorante(id,name, address, place, typeOfCucina, feedback, priceRange);
+		Restaurant insRes = new Restaurant(id,name, address, place, typeOfCucina, feedback, priceRange);
 		repo.save(insRes);
 		model.addAttribute("restaurants", repo.findAll());
 		return "/restaurants";
@@ -44,7 +44,7 @@ public class RistoranteCtrl {
 
 	@GetMapping("/rest/mod")
 	public String restMod(@RequestParam int id, Model model) {
-		Optional<Ristorante> opt = repo.findById(id);
+		Optional<Restaurant> opt = repo.findById(id);
 		if (opt.isPresent()) {
 			model.addAttribute("restaurant", opt.get());
 		}
@@ -53,7 +53,7 @@ public class RistoranteCtrl {
 	}
 	@GetMapping("/rest/canc")
 	public String restCanc(@RequestParam int id, Model model) {
-		Optional<Ristorante> opt=repo.findById(id);
+		Optional<Restaurant> opt=repo.findById(id);
 		if(opt.isPresent()) {
 			repo.deleteById(id);
 			model.addAttribute("restaurants", repo.findAll());
