@@ -30,21 +30,30 @@ public class UsersCtrl {
 		model.addAttribute("users", repo.findAll());
 		return "/users";
 	}
+	
+	@PostMapping("/mod")
+	public String modify(@RequestParam int userId,@RequestParam String firstName, @RequestParam String lastName,
+			@RequestParam String reliability, @RequestParam int reviews, Model model) {
+		Users insUten = new Users(userId,firstName, lastName, reliability, reviews);
+		repo.save(insUten);
+		model.addAttribute("users", repo.findAll());
+		return "/Users";
+	}
 	@GetMapping("/users/mod")
-	public String restMod(@RequestParam int id, Model model) {
+	public String usersMod(@RequestParam int id, Model model) {
 		Optional<Users> opt = repo.findById(id);
 		if (opt.isPresent()) {
 			model.addAttribute("users", opt.get());
 		}
-		return "/modifyPage";
+		return "/modifyUser";
 
 	}
 	@GetMapping("/users/canc")
-	public String utenCanc(@RequestParam int id, Model model) {
+	public String userCanc(@RequestParam int id, Model model) {
 		Optional<Users> opt=repo.findById(id);
 		if(opt.isPresent()) {
 			repo.deleteById(id);
-			model.addAttribute("restaurants", repo.findAll());
+			model.addAttribute("users", repo.findAll());
 		}
 		return "/users";
 	}

@@ -30,6 +30,13 @@ public class Users {
 		this.reliability = reliability;
 		this.reviews = reviews;
 	}
+	public Users(int userId,String firstName, String lastName, String reliability, int reviews) {
+		this.userId=userId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.reliability = reliability;
+		this.reviews = reviews;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -60,6 +67,14 @@ public class Users {
 	public void setReviews(int reviews) {
 		this.reviews = reviews;
 	}
+	
+	@Override
+	public String toString() {
+		return "Users [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", reliability="
+				+ reliability + ", reviews=" + reviews + "]";
+	}
+	
+	
 	
 	
 	
