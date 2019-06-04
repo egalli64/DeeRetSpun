@@ -51,4 +51,15 @@ public class RistoranteCtrl {
 		return "/paginaModifica";
 
 	}
+	@GetMapping("/rest/canc")
+	public String restCanc(@RequestParam int id, Model model) {
+		Optional<Ristorante> opt=repo.findById(id);
+		if(opt.isPresent()) {
+			repo.deleteById(id);
+			model.addAttribute("restaurants", repo.findAll());
+		}
+		return "/restaurants";
+	}
+	
+	
 }
