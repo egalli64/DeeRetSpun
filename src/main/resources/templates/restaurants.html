@@ -3,36 +3,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1,
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
 <link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/index.css" />
 <title>Restaurants</title>
 </head>
-<body class = "restaurants">
+<body class="restaurants">
 
-<div class="container-fluid">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col"></div>
-			<div class="col">
-			<img src= "img\Cattura.JPG" class="img-fluid">
-			</div>
-			</div>
-			</div>
-			
-			
-	<p>Restaurants in table
-	<a href="/newRestourant.html">
-	<button type="submit" class = "bottonerestaurants">Nuovo Ristorante</button>
-	</a>
+			<div class="col"></div>
+		</div>
+	</div>
+
+
+	<p>
+		Restaurants in table <a href="/newRestourant.html">
+			<button type="submit" class="bottonerestaurants">Nuovo
+				Ristorante</button>
+		</a>
 	</p>
 	<p>
 		<a href="/index.html">
-			<button type="submit" class = "bottonerestaurants">Ritorna alla home</button>
+			<button type="submit" class="bottonerestaurants">Ritorna
+				alla home</button>
 		</a>
 	</p>
-	<table class = "table table-hover table-bordered">
+	<table class="table table-hover table-bordered">
 		<tr>
 			<th>AZIONI</th>
 			<th>ID</th>
@@ -44,18 +45,15 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<th>PRICE RANGE</th>
 		</tr>
 		<tr th:each="cur: ${restaurants}">
-		<!-- al posto di regions ci va il nome del return del controller java -->
-			<td>
-				<a th:href = "@{/rest/mod(id=${cur.id})}">
-					<button type="submit" class = bottonerestaurants >Modifica</button>
-				</a>
-				<a th:href = "@{/reviews/ricercaRist(id=${cur.id})}">
-					<button type="submit" class = bottonerestaurants >Visualizza Recensione</button>
-				</a>
-				<a th:href = "@{/rest/canc(id=${cur.id})}">
-				<button type="submit" class = bottonerestaurants>Cancella</button>
-				</a>
-			</td>
+			<!-- al posto di regions ci va il nome del return del controller java -->
+			<td><a th:href="@{/rest/mod(id=${cur.id})}">
+					<button type="submit" class=bottonerestaurants>Modifica</button>
+			</a> <a th:href="@{/reviews/ricercaRist(id=${cur.id})}">
+					<button type="submit" class=bottonerestaurants>Visualizza
+						Recensione</button>
+			</a> <a th:href="@{/rest/canc(id=${cur.id})}">
+					<button type="submit" class=bottonerestaurants>Cancella</button>
+			</a></td>
 			<td th:text="${cur.id}">1</td>
 			<td th:text="${cur.name}">2</td>
 			<td th:text="${cur.address}">3</td>
@@ -65,5 +63,17 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 			<td th:text="${cur.priceRange}">7</td>
 		</tr>
 	</table>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col"><img src="img\Cattura.JPG" class="img-fluid"></div>
+		</div>
 </body>
 </html>
