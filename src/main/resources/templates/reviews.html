@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
+
+<title>Users</title>
+</head>
+<body>
+	<p>
+		<a href="/newUser.html">
+			<button type="submit">Nuova Recensione</button>
+		</a>
+		<a href="/index.html">
+			<button type="submit">Ritorna alla home</button>
+		</a>
+	</p>
+
+	<table>
+		<tr>
+			<th>AZIONI</th>
+			<th>REVIEW_ID</th>
+			<th>RESTAURANT_ID</th>
+			<th>USER_ID</th>
+			<th>REVIEW</th>
+			<th>VOTE</th>
+			<th>LIKES</th>
+			<th>UNLIKES</th>
+		</tr>
+		<tr th:each="cur: ${reviews}">
+			<!-- RICORDA DI CONTROLLARE IL NOME DI MODEL -->
+			<!-- al posto di regions ci va il nome del return del controller java -->
+			<td><a th:href="@{/reviews/mod(reviewId=${cur.reviewId})}">
+					<button type="submit">Modifica</button>
+			</a> <a th:href="@{/user/canc(reviewId=${cur.reviewId})}">
+					<button type="submit">Cancella</button>
+			</a></td>
+			<td th:text="${cur.reviewId}">1</td>
+			<td th:text="${cur.restaurantId}">2</td>
+			<td th:text="${cur.userId}">3</td>
+			<td th:text="${cur.review}">4</td>
+			<td th:text="${cur.vote}">5</td>
+			<td th:text="${cur.likes}">4</td>
+			<td th:text="${cur.unlikes}">5</td>
+	</table>
+
+</body>
+</html>

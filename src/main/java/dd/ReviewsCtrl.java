@@ -21,9 +21,9 @@ public class ReviewsCtrl {
 	
 	@PostMapping("/insReviews/Save")
 	public String inserisci(@RequestParam int reviewId, @RequestParam int restaurantId,
-			@RequestParam int userId, @RequestParam String review, @RequestParam int miPiace,
+			@RequestParam int userId, @RequestParam String review, @RequestParam int vote, @RequestParam int miPiace,
 			@RequestParam int nonMiPiace, Model model) {
-		Reviews insRev = new Reviews(reviewId,restaurantId, userId, review, miPiace, nonMiPiace);
+		Reviews insRev = new Reviews(reviewId,restaurantId, userId, review, vote, miPiace, nonMiPiace);
 		repo.save(insRev);
 		model.addAttribute("reviews", repo.findAll());
 		return "/reviews";
@@ -31,9 +31,9 @@ public class ReviewsCtrl {
 	
 	@PostMapping("/modReviews")
 	public String modifica(@RequestParam int reviewId, @RequestParam int restaurantId,
-			@RequestParam int userId, @RequestParam String review, @RequestParam int miPiace,
+			@RequestParam int userId, @RequestParam String review, @RequestParam int vote, @RequestParam int miPiace,
 			@RequestParam int nonMiPiace, Model model) {
-		Reviews insRev = new Reviews(reviewId,restaurantId, userId, review, miPiace, nonMiPiace);
+		Reviews insRev = new Reviews(reviewId,restaurantId, userId, review, vote, miPiace, nonMiPiace);
 		repo.save(insRev);
 		model.addAttribute("reviews", repo.findAll());
 		return "/reviews";

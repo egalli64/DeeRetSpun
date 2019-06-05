@@ -26,9 +26,11 @@ public class Reviews {
 	private int userId;
 	@Column(name ="REVIEW")
 	private String review;
-	@Column(name = "MI_PIACE")
+	@Column(name ="VOTE")
+	private int vote;
+	@Column(name = "LIKES")
 	private int miPiace;
-	@Column(name = "NON_MI_PIACE")
+	@Column(name = "LIKES")
 	private int nonMiPiace;
 	
 	
@@ -36,16 +38,25 @@ public class Reviews {
 		
 	}
 	
-	public Reviews(int reviewId, int restaurantId, int userId, String review, int miPiace, int nonMiPiace) {
+	public Reviews(int reviewId, int restaurantId, int userId, String review, int vote, int miPiace, int nonMiPiace) {
 		this.reviewId = reviewId;
 		this.restaurantId = restaurantId;
 		this.userId = userId;
 		this.review = review;
+		this.vote = vote;
 		this.miPiace = miPiace;
 		this.nonMiPiace = nonMiPiace;
 	}
 	
 	
+	public int getVote() {
+		return vote;
+	}
+
+	public void setVote(int vote) {
+		this.vote = vote;
+	}
+
 	public int getReviewId() {
 		return reviewId;
 	}
@@ -86,9 +97,9 @@ public class Reviews {
 	@Override
 	public String toString() {
 		return "Reviews [reviewId=" + reviewId + ", restaurantId=" + restaurantId + ", userId=" + userId + ", review="
-				+ review + ", miPiace=" + miPiace + ", nonMiPiace=" + nonMiPiace + "]";
+				+ review + ", vote=" + vote + ", miPiace=" + miPiace + ", nonMiPiace=" + nonMiPiace + "]";
 	}
-	
+
 	
 	
 	
