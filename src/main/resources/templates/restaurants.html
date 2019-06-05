@@ -23,13 +23,13 @@ shrink-to-fit=no">
 
 	<p>
 		Restaurants in table <a href="/newRestourant.html">
-			<button type="submit" class="bottonerestaurants">Nuovo
+			<button type="submit">Nuovo
 				Ristorante</button>
 		</a>
 	</p>
 	<p>
 		<a href="/index.html">
-			<button type="submit" class="bottonerestaurants">Ritorna
+			<button type="submit">Ritorna
 				alla home</button>
 		</a>
 	</p>
@@ -47,12 +47,12 @@ shrink-to-fit=no">
 		<tr th:each="cur: ${restaurants}">
 			<!-- al posto di regions ci va il nome del return del controller java -->
 			<td><a th:href="@{/rest/mod(id=${cur.id})}">
-					<button type="submit" class=bottonerestaurants>Modifica</button>
+					<button type="submit">Modifica</button>
 			</a> <a th:href="@{/reviews/ricercaRist(id=${cur.id})}">
-					<button type="submit" class=bottonerestaurants>Visualizza
+					<button type="submit">Visualizza
 						Recensione</button>
 			</a> <a th:href="@{/rest/canc(id=${cur.id})}">
-					<button type="submit" class=bottonerestaurants>Cancella</button>
+					<button type="submit">Cancella</button>
 			</a></td>
 			<td th:text="${cur.id}">1</td>
 			<td th:text="${cur.name}">2</td>

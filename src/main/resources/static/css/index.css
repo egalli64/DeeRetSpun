@@ -3,8 +3,13 @@ body
 {
 	height: 100%;
 }
-.bottoneindex{
- background-color: white;
+
+restaurants{
+	background-image: "\img\Cattura.JPG";
+}
+
+button {
+	background-color: white;
   border: 2px solid tomato;
  border-radius: 8px;
     color: tomato;
@@ -13,20 +18,4 @@ body
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
-
-.bottonerestaurants{
- background-color: white;
-  border: 2px solid tomato;
- border-radius: 8px;
-    color: tomato;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-}
-
-restaurants{
-	background-image: "\img\Cattura.JPG";
 }
