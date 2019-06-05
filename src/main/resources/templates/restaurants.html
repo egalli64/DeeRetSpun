@@ -5,22 +5,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
-
-
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/index.css" />
 <title>Restaurants</title>
 </head>
-<body>
+<body class = "restaurants">
 	<p>Restaurants in table
 	<a href="/newRestourant.html">
-	<button type="submit">Nuovo Ristorante</button>
+	<button type="submit" class = "bottonerestaurants">Nuovo Ristorante</button>
 	</a>
 	</p>
 	<p>
 		<a href="/index.html">
-			<button type="submit">Ritorna alla home</button>
+			<button type="submit" class = "bottonerestaurants">Ritorna alla home</button>
 		</a>
 	</p>
-	<table>
+	<table class = "table table-hover table-bordered">
 		<tr>
 			<th>AZIONI</th>
 			<th>ID</th>
@@ -35,10 +36,13 @@ shrink-to-fit=no">
 		<!-- al posto di regions ci va il nome del return del controller java -->
 			<td>
 				<a th:href = "@{/rest/mod(id=${cur.id})}">
-					<button type="submit">Modifica</button>
+					<button type="submit" class = bottonerestaurants >Modifica</button>
+				</a>
+				<a th:href = "@{/reviews/ricercaRist(id=${cur.id})}">
+					<button type="submit" class = bottonerestaurants >Visualizza Recensione</button>
 				</a>
 				<a th:href = "@{/rest/canc(id=${cur.id})}">
-				<button type="submit">Cancella</button>
+				<button type="submit" class = bottonerestaurants>Cancella</button>
 				</a>
 			</td>
 			<td th:text="${cur.id}">1</td>
