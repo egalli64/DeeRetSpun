@@ -57,10 +57,10 @@ public class ReviewsCtrl {
 	}
 
 	@GetMapping("/reviews/canc")
-	public String reviewsCanc(@RequestParam int userId, Model model) {
-		Optional<Reviews> opt = repo.findById(userId);
+	public String reviewsCanc(@RequestParam int reviewId, Model model) {
+		Optional<Reviews> opt = repo.findById(reviewId);
 		if (opt.isPresent()) {
-			repo.deleteById(userId);
+			repo.deleteById(reviewId);
 			model.addAttribute("reviews", opt.get());
 		}
 
