@@ -46,8 +46,9 @@ public class ReviewsCtrl {
 	}
 
 	@GetMapping("/reviews/mod")
-	public String restMod(@RequestParam int userId, Model model) {
-		Optional<Reviews> opt = repo.findById(userId);
+	public String revMod(@RequestParam int reviewId, Model model) {
+		log.trace("enter revMod");
+		Optional<Reviews> opt = repo.findById(reviewId);
 		if (opt.isPresent()) {
 			model.addAttribute("reviews", opt.get());
 		}
