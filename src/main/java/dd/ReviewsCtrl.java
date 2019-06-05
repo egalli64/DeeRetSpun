@@ -69,11 +69,11 @@ public class ReviewsCtrl {
 		return "/reviews";
 	}
 
-	@GetMapping("/reviews/ricercaRist")
+	/*@GetMapping("/reviews/ricercaRist")
 	public String cercaPerRistoranti(@RequestParam int restaurantId, Model model) {
 		Iterable<Reviews> rests = repo.findByRestaurant_id(restaurantId);// vado a cercare tra i ristoranti se c'è un Id
 																			// corrispondente a restaurantId
 		model.addAttribute("restaurants", rests);
 		return "/restaurantReview";
-	}
+	}*/
 }
