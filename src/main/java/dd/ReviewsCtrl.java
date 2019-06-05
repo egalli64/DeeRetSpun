@@ -28,10 +28,10 @@ public class ReviewsCtrl {
 	}
 
 	@PostMapping("/insReviews/Save")
-	public String inserisci(@RequestParam int restaurantId, @RequestParam int userId,
+	public String inserisci(@RequestParam int id, @RequestParam int userId,
 			@RequestParam String review, @RequestParam int vote, @RequestParam int miPiace,
 			@RequestParam int nonMiPiace, Model model) {
-		Reviews insRev = new Reviews(restaurantId, userId, review, vote);
+		Reviews insRev = new Reviews(id, userId, review, vote);
 		repo.save(insRev);
 		model.addAttribute("reviews", repo.findAll());
 		return "/reviews";

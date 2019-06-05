@@ -23,7 +23,7 @@ public class Reviews {
 	@Column(name = "REVIEW_ID")
 	private int reviewId;
 	@Column(name = "RESTAURANT_ID")
-	private int restaurantId;
+	private int id;
 	@Column(name = "USER_ID")
 	private int userId;
 	@Column(name ="REVIEW")
@@ -41,7 +41,7 @@ public class Reviews {
 	}
 	
 	public Reviews(int restaurantId, int userId, String review, int vote) {
-		this.restaurantId = restaurantId;
+		this.id = restaurantId;
 		this.userId = userId;
 		this.review = review;
 		this.vote = vote;
@@ -49,7 +49,7 @@ public class Reviews {
 	
 	public Reviews(int reviewId, int restaurantId, int userId, String review, int vote, int miPiace, int nonMiPiace) {
 		this.reviewId = reviewId;
-		this.restaurantId = restaurantId;
+		this.id = restaurantId;
 		this.userId = userId;
 		this.review = review;
 		this.vote = vote;
@@ -73,10 +73,10 @@ public class Reviews {
 		this.reviewId = reviewId;
 	}
 	public int getRestaurantId() {
-		return restaurantId;
+		return id;
 	}
 	public void setRestaurantId(int restaurantId) {
-		this.restaurantId = restaurantId;
+		this.id = restaurantId;
 	}
 	public int getUserId() {
 		return userId;
@@ -105,7 +105,7 @@ public class Reviews {
 
 	@Override
 	public String toString() {
-		return "Reviews [reviewId=" + reviewId + ", restaurantId=" + restaurantId + ", userId=" + userId + ", review="
+		return "Reviews [reviewId=" + reviewId + ", restaurantId=" + id + ", userId=" + userId + ", review="
 				+ review + ", vote=" + vote + ", miPiace=" + miPiace + ", nonMiPiace=" + nonMiPiace + "]";
 	}
 
