@@ -6,41 +6,48 @@
 <title>regions</title>
 </head>
 <body>
+	<p>
+		<a href="/users">
+			<button type="submit">Ritorna alla pagina ristoranti</button>
+		</a>
+	</p>
 	<p>Restaurants in table</p>
 
 	<form method="post" action="/modRes">
 		<div>
-			<label for="id">RESTAURANT_ID:</label>
-			<input type="text" id="id" name="id" th:value="${restaurant.id}" readonly>
+			<label for="id">RESTAURANT_ID:</label> <input type="text" id="id"
+				name="id" th:value="${restaurant.id}" readonly>
 		</div>
 		<div>
-			<label for="name">NAME:</label>
-			<input type="text" id="name" name="name" th:value="${restaurant.name}">
+			<label for="name">NAME:</label> <input type="text" id="name"
+				name="name" th:value="${restaurant.name}">
 		</div>
 		<div>
-			<label for="address">ADDRESS:</label> 
-			<input type="text" id="address" name="address" th:value="${restaurant.address}" />
-		</div>
-        <div>
-			<label for="place">PLACE:</label> 
-			<input type="text" id="place" name="place" th:value="${restaurant.place}">
+			<label for="address">ADDRESS:</label> <input type="text" id="address"
+				name="address" th:value="${restaurant.address}" />
 		</div>
 		<div>
-			<label for="typeOfCucina">TYPE_OF_CUCINA:</label> 
-			<input type="text" id="typeOfCucina" name="typeOfCucina" th:value="${restaurant.typeOfCucina}">
+			<label for="place">PLACE:</label> <input type="text" id="place"
+				name="place" th:value="${restaurant.place}">
 		</div>
 		<div>
-			<label for="feedback">FEEDBACK:</label> 
-			<input type="text" id="feedback" name="feedback" th:value="${restaurant.feedback}">
+			<label for="typeOfCucina">TYPE_OF_CUCINA:</label> <input type="text"
+				id="typeOfCucina" name="typeOfCucina"
+				th:value="${restaurant.typeOfCucina}">
 		</div>
 		<div>
-			<label for="priceRange">PRICE_RANGE:</label> 
-			<input type="text" id="priceRange" name="priceRange" th:value="${restaurant.priceRange}">
+			<label for="feedback">FEEDBACK:</label> <input type="text"
+				id="feedback" name="feedback" th:value="${restaurant.feedback}">
 		</div>
 		<div>
-		<button type="submit">Conferma</button>
+			<label for="priceRange">PRICE_RANGE:</label> <input type="text"
+				id="priceRange" name="priceRange"
+				th:value="${restaurant.priceRange}">
 		</div>
-	</form>	
+		<div>
+			<button type="submit">Conferma</button>
+		</div>
+	</form>
 </body>
 </html>
 
