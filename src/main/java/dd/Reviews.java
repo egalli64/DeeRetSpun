@@ -40,6 +40,13 @@ public class Reviews {
 		
 	}
 	
+	public Reviews(int restaurantId, int userId, String review, int vote) {
+		this.restaurantId = restaurantId;
+		this.userId = userId;
+		this.review = review;
+		this.vote = vote;
+	}
+	
 	public Reviews(int reviewId, int restaurantId, int userId, String review, int vote, int miPiace, int nonMiPiace) {
 		this.reviewId = reviewId;
 		this.restaurantId = restaurantId;
