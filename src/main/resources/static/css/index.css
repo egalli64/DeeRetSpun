@@ -1,8 +1,9 @@
 
-.bottone {
- background-color: tomato;
- border: none;
-    color: white;
+.bottoneindex{
+ background-color: white;
+  border: 2px solid tomato;
+ border-radius: 8px;
+    color: tomato;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
