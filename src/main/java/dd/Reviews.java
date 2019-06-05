@@ -30,7 +30,7 @@ public class Reviews {
 	private int vote;
 	@Column(name = "LIKES")
 	private int miPiace;
-	@Column(name = "LIKES")
+	@Column(name = "UNLIKES")
 	private int nonMiPiace;
 	
 	
