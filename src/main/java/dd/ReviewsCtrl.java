@@ -17,6 +17,8 @@ public class ReviewsCtrl {
 
 	@Autowired
 	ReviewsRepo repo;
+	@Autowired
+	RestaurantRepo repoRest;
 
 	@GetMapping("/reviews")
 	public String recensione(Model model) {
@@ -69,7 +71,12 @@ public class ReviewsCtrl {
 
 	@GetMapping("/reviews/ricercaRist")
 	public String cercaPerRistoranti(@RequestParam int restaurantId, Model model) {
+		Optional<Restaurant>opt=repoRest.findById(restaurantId);//vado a cercare tra i ristoranti se c'è un Id corrispondente a restaurantId
+		if(opt.isPresent()) {
+			 
+		}
+		
 
-		return "/reviews";
+		return "/searchReviews";//nome pagina da modificare
 	}
 }
