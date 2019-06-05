@@ -22,11 +22,9 @@ public class Reviews {
 	
 	@Column(name = "REVIEW_ID")
 	private int reviewId;
-	@ManyToOne
-	@JoinColumn(name = "RESTAURANT_ID")
+	@Column(name = "RESTAURANT_ID")
 	private int restaurantId;
-	@ManyToOne
-	@JoinColumn(name = "USER_ID")
+	@Column(name = "USER_ID")
 	private int userId;
 	@Column(name ="REVIEW")
 	private String review;
