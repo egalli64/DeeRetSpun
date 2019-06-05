@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -20,9 +22,11 @@ public class Reviews {
 	
 	@Column(name = "REVIEW_ID")
 	private int reviewId;
-	@Column(name = "RESTAURANT_ID")
+	@ManyToOne
+	@JoinColumn(name = "RESTAURANT_ID")
 	private int restaurantId;
-	@Column(name = "USER_ID")
+	@ManyToOne
+	@JoinColumn(name = "USER_ID")
 	private int userId;
 	@Column(name ="REVIEW")
 	private String review;
