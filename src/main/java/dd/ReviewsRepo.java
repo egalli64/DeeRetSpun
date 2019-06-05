@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReviewsRepo extends CrudRepository<Reviews,Integer>  {
 	
-	List<Reviews> findByRestaurantId(int id);
+	List<Reviews> findByRestaurant_id(int id);
 
 }

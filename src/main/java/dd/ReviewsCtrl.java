@@ -71,12 +71,9 @@ public class ReviewsCtrl {
 
 	@GetMapping("/reviews/ricercaRist")
 	public String cercaPerRistoranti(@RequestParam int restaurantId, Model model) {
-		Optional<Restaurant>opt=repoRest.findById(restaurantId);//vado a cercare tra i ristoranti se c'è un Id corrispondente a restaurantId
-		if(opt.isPresent()) {
-			 
-		}
-		
-
+		Iterable<Reviews> rests = repo.findByRestaurant_id(restaurantId);// vado a cercare tra i ristoranti se c'è un Id
+																			// corrispondente a restaurantId
+		model.addAttribute("restaurants", rests);
 		return "/restaurantReview";
 	}
 }
