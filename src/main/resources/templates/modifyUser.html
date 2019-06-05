@@ -6,7 +6,11 @@
 <title>regions</title>
 </head>
 <body>
-	<p>Users in table</p>
+	<p>
+		<a href="/users">
+			<button type="submit">Ritorna alla pagina utenti</button>
+		</a>
+	</p>
 
 	<form method="post" action="/modUser">
 		<div>
@@ -14,21 +18,20 @@
 				name="userId" th:value="${users.userId}" readonly>
 		</div>
 		<div>
-			<label for="firstName">FIRST_NAME:</label> <input type="text" id="firstName"
-				name="firstName" th:value="${users.firstName}">
+			<label for="firstName">FIRST_NAME:</label> <input type="text"
+				id="firstName" name="firstName" th:value="${users.firstName}">
 		</div>
 		<div>
-			<label for="lastName">LAST_NAME:</label> <input type="text" id="lastName"
-				name="lastName" th:value="${users.lastName}" />
+			<label for="lastName">LAST_NAME:</label> <input type="text"
+				id="lastName" name="lastName" th:value="${users.lastName}" />
 		</div>
 		<div>
-			<label for="reliability">RELIABILITY:</label> <input type="text" id="reliability"
-				name="reliability" th:value="${users.reliability}">
+			<label for="reliability">RELIABILITY:</label> <input type="text"
+				id="reliability" name="reliability" th:value="${users.reliability}">
 		</div>
 		<div>
 			<label for="reviews">NUM_REVIEWS:</label> <input type="text"
-				id="reviews" name="reviews"
-				th:value="${users.reviews}">
+				id="reviews" name="reviews" th:value="${users.reviews}">
 		</div>
 		<div>
 			<button type="submit">Conferma</button>

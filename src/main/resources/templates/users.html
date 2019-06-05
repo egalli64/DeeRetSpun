@@ -3,17 +3,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1,
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,
 shrink-to-fit=no">
 
 <title>Users</title>
 </head>
 <body>
-	<p>Users in table
-	<a href="/newUser.html">
-	<button type="submit">Nuovo Utente</button>
-	</a>
+	<p>
+		<a href="/newUser.html">
+			<button type="submit">Nuovo Utente</button>
+		</a>
 	</p>
+	<p>
+		<a href="/index.html">
+			<button type="submit">Ritorna alla home</button>
+		</a>
+	</p>
+
 	<table>
 		<tr>
 			<th>AZIONI</th>
@@ -23,21 +30,20 @@ shrink-to-fit=no">
 			<th>RELIABILITY</th>
 			<th>REVIEWS</th>
 		</tr>
-		<tr th:each="cur: ${users}"><!-- RICORDA DI CONTROLLARE IL NOME DI MODEL -->
-		<!-- al posto di regions ci va il nome del return del controller java -->
-			<td>
-				<a th:href = "@{/user/mod(userId=${cur.userId})}">
+		<tr th:each="cur: ${users}">
+			<!-- RICORDA DI CONTROLLARE IL NOME DI MODEL -->
+			<!-- al posto di regions ci va il nome del return del controller java -->
+			<td><a th:href="@{/user/mod(userId=${cur.userId})}">
 					<button type="submit">Modifica</button>
-				</a>
-				<a th:href = "@{/user/canc(userId=${cur.userId})}">
-				<button type="submit">Cancella</button>
-				</a>
-			</td>
+			</a> <a th:href="@{/user/canc(userId=${cur.userId})}">
+					<button type="submit">Cancella</button>
+			</a></td>
 			<td th:text="${cur.userId}">1</td>
 			<td th:text="${cur.firstName}">2</td>
 			<td th:text="${cur.lastName}">3</td>
 			<td th:text="${cur.reliability}">4</td>
 			<td th:text="${cur.reviews}">5</td>
 	</table>
+
 </body>
 </html>
