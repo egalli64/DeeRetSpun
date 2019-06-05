@@ -63,7 +63,7 @@ public class ReviewsCtrl {
 		Optional<Reviews> opt = repo.findById(reviewId);
 		if (opt.isPresent()) {
 			repo.deleteById(reviewId);
-			model.addAttribute("reviews", opt.get());
+			model.addAttribute("reviews", repo.findAll());
 		}
 
 		return "/reviews";
@@ -77,6 +77,6 @@ public class ReviewsCtrl {
 		}
 		
 
-		return "/searchReviews";//nome pagina da modificare
+		return "/restaurantReview";
 	}
 }
